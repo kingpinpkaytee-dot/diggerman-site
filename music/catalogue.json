@@ -390,7 +390,7 @@
       "slug": "sun-raze-1-0",
       "type": "EP",
       "spotifyAlbumId": "2nk5mK0Ne0hPKWCe5ZawqH",
-      "cover": "https://i.scdn.co/image/ab67616d0000b273efc575330fc50709f43dcdd",
+      "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/52/04/ec/5204ec38-c70b-987f-31d6-255cee973209/5064091007138_cover.jpg/1000x1000bb.jpg",
       "tracks": [
         {
           "title": "Sun Raze - 1.0",
@@ -406,8 +406,10 @@
           "releaseDate": null,
           "releaseSpotifyUrl": "https://open.spotify.com/album/2nk5mK0Ne0hPKWCe5ZawqH",
           "releaseSpotifyId": "2nk5mK0Ne0hPKWCe5ZawqH",
-          "cover": "https://i.scdn.co/image/ab67616d0000b273efc575330fc50709f43dcdd",
-          "pageUrl": "https://kingpinpkaytee-dot.github.io/diggerman-site/music/tracks/sun-raze-1-0/sun-raze-1-0/"
+          "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/52/04/ec/5204ec38-c70b-987f-31d6-255cee973209/5064091007138_cover.jpg/1000x1000bb.jpg",
+          "pageUrl": "https://kingpinpkaytee-dot.github.io/diggerman-site/music/tracks/sun-raze-1-0/sun-raze-1-0/",
+          "spotifyArtworkUrl": "https://i.scdn.co/image/ab67616d0000b273efc575330fc50709f43dcdd8",
+          "appleMusicAlbumUrl": "https://music.apple.com/za/album/sun-raze-1-0-ep/6815227603"
         },
         {
           "title": "Sun Raze II - 1.1",
@@ -423,8 +425,10 @@
           "releaseDate": null,
           "releaseSpotifyUrl": "https://open.spotify.com/album/2nk5mK0Ne0hPKWCe5ZawqH",
           "releaseSpotifyId": "2nk5mK0Ne0hPKWCe5ZawqH",
-          "cover": "https://i.scdn.co/image/ab67616d0000b273efc575330fc50709f43dcdd",
-          "pageUrl": "https://kingpinpkaytee-dot.github.io/diggerman-site/music/tracks/sun-raze-1-0/sun-raze-ii-1-1/"
+          "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/52/04/ec/5204ec38-c70b-987f-31d6-255cee973209/5064091007138_cover.jpg/1000x1000bb.jpg",
+          "pageUrl": "https://kingpinpkaytee-dot.github.io/diggerman-site/music/tracks/sun-raze-1-0/sun-raze-ii-1-1/",
+          "spotifyArtworkUrl": "https://i.scdn.co/image/ab67616d0000b273efc575330fc50709f43dcdd8",
+          "appleMusicAlbumUrl": "https://music.apple.com/za/album/sun-raze-1-0-ep/6815227603"
         },
         {
           "title": "Dusk Till Dawn - 1.0",
@@ -440,8 +444,10 @@
           "releaseDate": null,
           "releaseSpotifyUrl": "https://open.spotify.com/album/2nk5mK0Ne0hPKWCe5ZawqH",
           "releaseSpotifyId": "2nk5mK0Ne0hPKWCe5ZawqH",
-          "cover": "https://i.scdn.co/image/ab67616d0000b273efc575330fc50709f43dcdd",
-          "pageUrl": "https://kingpinpkaytee-dot.github.io/diggerman-site/music/tracks/sun-raze-1-0/dusk-till-dawn-1-0/"
+          "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/52/04/ec/5204ec38-c70b-987f-31d6-255cee973209/5064091007138_cover.jpg/1000x1000bb.jpg",
+          "pageUrl": "https://kingpinpkaytee-dot.github.io/diggerman-site/music/tracks/sun-raze-1-0/dusk-till-dawn-1-0/",
+          "spotifyArtworkUrl": "https://i.scdn.co/image/ab67616d0000b273efc575330fc50709f43dcdd8",
+          "appleMusicAlbumUrl": "https://music.apple.com/za/album/sun-raze-1-0-ep/6815227603"
         },
         {
           "title": "Dusk - 1.0",
@@ -457,12 +463,17 @@
           "releaseDate": null,
           "releaseSpotifyUrl": "https://open.spotify.com/album/2nk5mK0Ne0hPKWCe5ZawqH",
           "releaseSpotifyId": "2nk5mK0Ne0hPKWCe5ZawqH",
-          "cover": "https://i.scdn.co/image/ab67616d0000b273efc575330fc50709f43dcdd",
-          "pageUrl": "https://kingpinpkaytee-dot.github.io/diggerman-site/music/tracks/sun-raze-1-0/dusk-1-0/"
+          "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/52/04/ec/5204ec38-c70b-987f-31d6-255cee973209/5064091007138_cover.jpg/1000x1000bb.jpg",
+          "pageUrl": "https://kingpinpkaytee-dot.github.io/diggerman-site/music/tracks/sun-raze-1-0/dusk-1-0/",
+          "spotifyArtworkUrl": "https://i.scdn.co/image/ab67616d0000b273efc575330fc50709f43dcdd8",
+          "appleMusicAlbumUrl": "https://music.apple.com/za/album/sun-raze-1-0-ep/6815227603"
         }
       ],
       "spotifyUrl": "https://open.spotify.com/album/2nk5mK0Ne0hPKWCe5ZawqH",
-      "musicBrainzArtistUrl": "https://musicbrainz.org/artist/56a9fd42-e71b-4292-93b2-6662e1588503"
+      "musicBrainzArtistUrl": "https://musicbrainz.org/artist/56a9fd42-e71b-4292-93b2-6662e1588503",
+      "spotifyArtworkUrl": "https://i.scdn.co/image/ab67616d0000b273efc575330fc50709f43dcdd8",
+      "coverSource": "Apple Music South Africa catalogue artwork",
+      "appleMusicAlbumUrl": "https://music.apple.com/za/album/sun-raze-1-0-ep/6815227603"
     },
     {
       "title": "Baby",
