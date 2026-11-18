@@ -1,7 +1,7 @@
 # DiggerMan SEO Phase 5 — GA4 Consent & Music Click Measurement
 
 Date: 2026-11-18  
-Status: MEASUREMENT ID CONFIGURED ON ACTIVATION BRANCH — CONSENT-GATED COLLECTION — PRODUCTION DEPLOYMENT PENDING
+Status: MEASUREMENT ID CONFIGURED — PRODUCTION DEPLOYED — CONSENT-GATED COLLECTION
 
 ## Objective
 Prepare attribution from official artist-site visits to legitimate streaming destinations without confusing website clicks with DSP streams or activating analytics before the owner configures a Measurement ID and the visitor opts in.
@@ -88,3 +88,22 @@ Result: 7/7 consent-flow simulation checks passed. The real production configura
 - A review found that revocation must block the site's custom click handler as well as update Google consent; this is enforced by checking the saved consent choice before every outbound event.
 - This configuration still uses basic consent gating: the Google tag is not requested until a visitor accepts.
 - A mocked browser simulation must cover acceptance, denial, revocation and re-acceptance. A real GA4 DebugView / Realtime verification remains a final property-side check after deployment; this environment does not have access to the GA4 reporting interface.
+
+
+## Production activation verification
+
+- PR #13 was squash-merged to `main` as commit `e5438d97d2850f7ff5f1bcbac253de91edb712b2`.
+- GitHub Pages deployment workflow run `44219459864` completed successfully.
+- The supplied Measurement ID `G-EBV6T29B3P` was detected in the production analytics asset.
+- The production analytics asset also contains the per-event consent check that stops custom click events after consent is withdrawn.
+- The live privacy notice states that GA4 is configured and describes the opt-in choice.
+- Cache-busted live requests verified the analytics asset, privacy page, homepage, one track detail page and sitemap. The homepage and track detail page load the shared module.
+- A clean shallow clone of `main` was inspected: all 72 original artist-site HTML pages plus the new privacy notice (73 HTML pages total) reference the shared module; none were missing the script. Sitemap count: 73 URLs.
+- Node syntax validation passed. A mocked browser simulation using the configured Measurement ID passed 9/9 checks without sending any request to the real GA4 property.
+- Production deployment status: PASS. The Google tag remains blocked until each visitor opts in. A real GA4 DebugView / Realtime event confirmation has not been performed from this environment, and no real test event was sent.
+
+## GA4 property-side finalisation
+
+- In GA4 Admin > Data display > Custom definitions, register event-scoped custom dimensions for the custom parameters that need reporting, such as `destination_platform`, `destination_kind`, `destination_domain`, `track_name`, `link_text`, `link_position`, `page_type`, `page_path` and `contact_method`.
+- Then use DebugView / Realtime with a consenting test browser to verify `page_view`, `music_outbound_click` and `artist_contact_click`.
+- Google documents that custom parameters must be registered as custom dimensions before they become available in standard reports and Explorations. See https://developers.google.com/analytics/devguides/collection/ga4/event-parameters and https://support.google.com/analytics/answer/14239696.
