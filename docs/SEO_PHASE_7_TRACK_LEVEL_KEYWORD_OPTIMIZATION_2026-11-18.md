@@ -45,7 +45,7 @@ Strengthen organic discoverability for exact DiggerMan track-name searches by al
 | AK-47 - Remastered 2025 | The Gorilla Zone II (1.0) | `DiggerMan AK-47 - Remastered 2025` | `music/tracks/the-gorilla-zone-ii-1-0/ak-47-remastered-2025/index.html` |
 | Nongoloza - 1.0 | The Gorilla Zone II (1.0) | `DiggerMan Nongoloza - 1.0` | `music/tracks/the-gorilla-zone-ii-1-0/nongoloza-1-0/index.html` |
 | Gomolemo - Remastered 2025 | The Gorilla Zone II (1.0) | `DiggerMan Gomolemo - Remastered 2025` | `music/tracks/the-gorilla-zone-ii-1-0/gomolemo-remastered-2025/index.html` |
-| Push`karimayima | Earth Child (1.0) | `DiggerMan Push'karimayima` | `music/tracks/earth-child-1-0/push-karimayima/index.html` |
+| Push`karimayima | Earth Child (1.0) | DiggerMan Push\`karimayima | `music/tracks/earth-child-1-0/push-karimayima/index.html` |
 | Nguye Yedwa | Earth Child (1.0) | `DiggerMan Nguye Yedwa` | `music/tracks/earth-child-1-0/nguye-yedwa/index.html` |
 | Athandwe | Earth Child (1.0) | `DiggerMan Athandwe` | `music/tracks/earth-child-1-0/athandwe/index.html` |
 | Fairy Tales | Fairy Tales | `DiggerMan Fairy Tales` | `music/tracks/fairy-tales/fairy-tales/index.html` |
@@ -108,7 +108,7 @@ Strengthen organic discoverability for exact DiggerMan track-name searches by al
 Automated source checks were run while preparing the change:
 - 68 catalogue entries mapped to the 68 existing individual HTML pages.
 - All page templates had the expected title, description, Open Graph and Twitter metadata, cover image alt attributes and MusicRecording JSON-LD block.
-- All generated titles and descriptions are unique; descriptions are 103–160 characters.
+- All generated titles and descriptions are unique; descriptions are 102–159 characters.
 - Every title contains DiggerMan and the exact catalogue track title.
 - Every description contains the track, DiggerMan, parent release and accurate Spotify / platform-search wording.
 - Existing canonical URLs and primary H1 names match the catalogue manifest.
