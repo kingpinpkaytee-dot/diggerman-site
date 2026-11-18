@@ -3,7 +3,7 @@
  */
 (() => {
   "use strict";
-  const CONFIG={measurementId:"",consentKey:"diggerman_analytics_consent_v1",privacyPath:"/diggerman-site/privacy/"};
+  const CONFIG={measurementId:"G-EBV6T29B3P",consentKey:"diggerman_analytics_consent_v1",privacyPath:"/diggerman-site/privacy/"};
   if(!/^G-[A-Z0-9]{6,}$/i.test(CONFIG.measurementId)) return;
 
   const GRANTED="granted",DENIED="denied";
@@ -137,7 +137,7 @@
     return img?img.alt.trim().slice(0,100):"image_or_icon_link";
   }
   function handleClick(event){
-    if(!analyticsReady||typeof window.gtag!=="function"||event.defaultPrevented)return;
+    if(!analyticsReady||typeof window.gtag!=="function"||readChoice()!==GRANTED||event.defaultPrevented)return;
     const a=event.target&&event.target.closest?event.target.closest("a[href]"):null;
     if(!a)return;
     let u;try{u=new URL(a.href,window.location.href);}catch(_){return;}
