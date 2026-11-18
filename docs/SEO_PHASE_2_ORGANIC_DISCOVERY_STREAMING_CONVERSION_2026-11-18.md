@@ -100,3 +100,18 @@ Convert qualified organic search discovery into legitimate visits to DiggerMan's
 - No additional catalogue pages, releases, SmartLink destinations or search-engine URLs were created. Existing direct Spotify buttons and schema are preserved.
 - Local validation was run against a separately fetched branch checkout. The link-reconciliation result is PASS: 68 catalogue pages, 68 unique Spotify track IDs, 13 SmartLinks matches and 13/13 CTA coverage.
 - This follow-on PR is limited to the 10 previously uncovered catalogue pages and the memorandum. Production changes only after merge and live verification.
+
+
+## Phase 2 expanded SmartLinks rollout — production verification
+- PR #9 was squash-merged to main as commit 04beee8f32fa0d25f0b9da5d06499887f5e09e3b.
+- The 10 additional catalogue pages were checked against live GitHub Pages after deployment propagation.
+- All 10 returned HTTP 200 and included the CELESTIAL SmartLinks CTA: African Night (Remix) 2.0; Funk In The City (Remix) 2.0; Golden Horizon 1.0; Heartbeat Of Africa 1.0; Lights Out 1.0; Log Drum Supremacy 1.0; No Limits 1.0; Running Through The Lights 1.0; Celestial Signal; Celestial Signal Remake.
+- Together with the three verified Phase 2 pages from PR #8, live conversion CTA coverage is now 13 of 13 catalogue tracks represented in the existing CELESTIAL SmartLinks collection.
+- The existing catalogue remains 68 track pages and 71 sitemap URLs. No new track pages or sitemap entries were created.
+- The other 55 track pages retain their direct Spotify play buttons and existing clearly labelled DSP search paths; they were not incorrectly sent to an unrelated CELESTIAL collection.
+- Production verification result: PASS for all 13 SmartLinks-matched track pages.
+
+## Phase 2 status after production rollout
+- Catalogue-to-SmartLinks conversion implementation: COMPLETE for all 13 matching tracks.
+- 68-page direct Spotify identity reconciliation: PASS (68 distinct track IDs, each consistent with its MusicRecording JSON-LD direct track URL).
+- Google organic performance baseline, GA4 outbound-click reporting, DSP-side stream comparison, rendered accessibility and Core Web Vitals: still OPEN / EXTERNAL INPUT OR MEASUREMENT REQUIRED.
