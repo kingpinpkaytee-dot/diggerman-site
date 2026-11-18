@@ -91,3 +91,18 @@ Result: PASS.
 - Do not claim ranking growth, Knowledge Panel appearance, new leads or stream uplift without the corresponding evidence.
 - No bots, stream farms, artificial repeat plays, misleading redirects, fake engagement, scraped lead lists or unsolicited bulk messages.
 - The email route is for voluntary enquiries. A future lead form requires a clear purpose, consent, data minimisation, security and POPIA-aligned retention controls.
+
+
+## Production release verification
+- PR #10 was squash-merged to main as commit 5e0e90a4bb1ed11523bda4a179c82329e471215f.
+- After GitHub Pages deployment propagated, all five production routes were confirmed HTTP 200:
+  - Genre hub: /genres/
+  - Artist homepage: /
+  - Official catalogue: /music/
+  - CELESTIAL SmartLinks: /promotions/celestial-smartlinks/
+  - XML sitemap: /sitemap.xml
+- The live genre hub returned 17,520 bytes and contained its genre title, JSON-LD, DSP search links and contact CTA.
+- The live homepage, catalogue and SmartLinks pages contain the Genre Guide internal navigation/crosslinks.
+- The live sitemap returns HTTP 200 and contains 72 URL entries, including the genre hub.
+- Production rollout status: PASS for the genre discovery page and its internal discovery links.
+- Search Console indexing and search performance are not yet confirmed. The URL is now discoverable through the sitemap and internal links; this is not proof that Google has indexed it.
