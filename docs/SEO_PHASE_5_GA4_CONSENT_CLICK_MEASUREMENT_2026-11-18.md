@@ -1,7 +1,7 @@
 # DiggerMan SEO Phase 5 — GA4 Consent & Music Click Measurement
 
 Date: 2026-11-18  
-Status: MERGED — PRODUCTION LIVE VERIFIED — TRACKING DISABLED UNTIL OWNER CONFIGURES MEASUREMENT ID
+Status: MEASUREMENT ID CONFIGURED ON ACTIVATION BRANCH — CONSENT-GATED COLLECTION — PRODUCTION DEPLOYMENT PENDING
 
 ## Objective
 Prepare attribution from official artist-site visits to legitimate streaming destinations without confusing website clicks with DSP streams or activating analytics before the owner configures a Measurement ID and the visitor opts in.
@@ -31,20 +31,21 @@ Consent defaults set `analytics_storage`, `ad_storage`, `ad_user_data` and `ad_p
 The custom click event omits the full destination URL and query string. It measures a website click only, not a stream, save, follow, playlist add or listener.
 
 ## GA4 setup still required
-1. Create or select the GA4 property and Web data stream for the official site.
-2. Copy its Measurement ID (`G-XXXXXXXXXX`). The Measurement ID is public by design. Do not share a service-account key, OAuth secret or API secret.
-3. Before activation, choose the GA4 event-data retention period in Admin > Data settings > Data retention. Do not claim a retention period in the notice until configured.
-4. Review Enhanced Measurement outbound-click settings. GA4 may also emit the standard `click` event; do not add standard click counts to the custom music-click counts as if they were a single conversion.
-5. After the ID is inserted, test Allow, Decline and revocation in a real browser using GA4 DebugView / Realtime. Confirm no Google measurement calls occur before opt-in or after denial.
+1. GA4 Web stream Measurement ID supplied by the site owner: `G-EBV6T29B3P`. This public identifier is configured in `assets/analytics.js`; no secret credentials were requested or stored.
+2. Before the owner interprets long-term reporting, choose and record the GA4 event-data retention period in Admin > Data settings > Data retention.
+3. Review Enhanced Measurement outbound-click settings. GA4 may also emit a standard `click` event; do not add standard click counts to custom `music_outbound_click` counts as if they were a single conversion.
+4. The configured Google tag is loaded only after a visitor selects “Allow analytics”. Visitors can decline or later withdraw their choice. Advertising storage and personalisation remain denied.
+5. Complete a real-browser test with the site's actual GA4 property using DebugView / Realtime. Confirm a `page_view`, a `music_outbound_click`, and an `artist_contact_click` appear after opt-in; confirm no custom events are sent after denial or revocation.
 6. Register event-scoped custom dimensions if reporting on them: `destination_platform`, `destination_kind`, `destination_domain`, `track_name`, `link_text`, `link_position`, `page_type`, `page_path`, `contact_method`.
 7. Build reports for music clicks by platform/page, track-level click-through, genre-hub click-through, and artist contact clicks.
 8. Compare click trends with Spotify for Artists / other DSP reports for matching time windows. Never label website click counts as streams.
 
 ## QA and guardrails
 - All 72 existing HTML pages load the same shared module.
-- Module remains dormant with the empty Measurement ID.
+- Module is configured with `G-EBV6T29B3P` on the activation branch and does not load until a visitor opts in.
+- Every click event also checks the stored consent choice; after revocation, no further custom click events are queued.
 - Privacy notice is in the sitemap.
-- Do not invent a GA4 ID, property, retention period, consent choice, search ranking or stream uplift.
+- Do not invent a GA4 property retention period, visitor consent choice, search ranking or stream uplift.
 - No Google Ads or advertising-personalisation tags are installed.
 - This technical implementation is not a legal opinion; the site owner should review the final notice and legal basis before enabling analytics publicly.
 
@@ -78,3 +79,12 @@ A local Node VM harness used a temporary test-only Measurement ID and a mocked b
 - Re-allow after revocation grants analytics storage again without injecting a duplicate tag.
 
 Result: 7/7 consent-flow simulation checks passed. The real production configuration remains blank and tracking remains disabled.
+
+
+## Owner Measurement ID activation
+
+- The owner supplied GA4 Measurement ID `G-EBV6T29B3P` on 18 November 2026.
+- The activation branch configures this ID in the shared module.
+- A review found that revocation must block the site's custom click handler as well as update Google consent; this is enforced by checking the saved consent choice before every outbound event.
+- This configuration still uses basic consent gating: the Google tag is not requested until a visitor accepts.
+- A mocked browser simulation must cover acceptance, denial, revocation and re-acceptance. A real GA4 DebugView / Realtime verification remains a final property-side check after deployment; this environment does not have access to the GA4 reporting interface.
