@@ -121,9 +121,14 @@ a{color:inherit}
 footer{background:var(--ink);color:#bbb;text-align:center;padding:25px}
 footer a{color:var(--gold)}
 @media(max-width:800px){.genre-grid{grid-template-columns:1fr}.top{align-items:flex-start;flex-direction:column}.top nav{gap:12px}}
+
+.skip-link{position:absolute;left:-10000px;top:12px;z-index:1000;display:inline-block;background:#fff;color:#111;padding:12px 16px;border:2px solid var(--gold);border-radius:4px;font-weight:800;text-decoration:none}
+.skip-link:focus{left:12px}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto!important}*,*::before,*::after{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
 </style>
 </head>
 <body>
+<a class="skip-link" href="#main-content">Skip to main content</a>
 <header class="top">
 <a class="brand" href="https://kingpinpkaytee-dot.github.io/diggerman-site/">DIGGERMAN</a>
 <nav aria-label="Main navigation">
@@ -147,7 +152,7 @@ footer a{color:var(--gold)}
 <a class="btn outline" href="https://kingpinpkaytee-dot.github.io/diggerman-site/music/">Explore all 68 official tracks</a>
 </div>
 </section>
-<main class="wrap">
+<main id="main-content" class="wrap" tabindex="-1">
 <section class="intro">
 <h2>Find your sound. Discover the artist.</h2>
 <p>Searching for a South African Amapiano artist, Afro House music from Johannesburg or Deep House by an independent South African producer? Start with DiggerMan's official artist identity and verified music catalogue. The links below take you to his real artist and release destinations rather than unofficial reposts.</p>
