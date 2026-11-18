@@ -19,6 +19,8 @@ The GTM container ID is a public installation identifier, not a secret. The GA4 
 ## Site-side implementation
 
 - The shared module establishes window.dataLayer and consent defaults synchronously before any GTM library can load.
+- The shared module queues `gtag('js', new Date())` after the denied consent defaults, matching the initialization command in the supplied Google tag snippet.
+- The GTM JavaScript request remains dynamically injected only after Allow analytics; it is intentionally not pasted as an unconditional static script immediately after `<head>`, because that would violate the site's basic-consent policy.
 - All four Consent Mode v2 states default to denied: analytics_storage, ad_storage, ad_user_data and ad_personalization.
 - No GTM network request is made for a first-time visitor before a choice, or for a visitor who has declined.
 - On Allow, the module queues the analytics-only consent update, queues the gtm.js bootstrap event and then injects the GTM loader for GTM-KWM2BWTS.
@@ -75,7 +77,7 @@ Do not configure the same GA4 property through both a direct gtag.js installatio
 
 ## Verification checklist
 
-Repository-side checks completed on PR #14:
+Repository-side checks completed on PR #14 and follow-up PR: 
 - JavaScript syntax parsing passed.
 - Confirmed the shared module contains the GTM ID and no direct GA4 gtag.js loader.
 - No artist-page HTML references were changed; the shared analytics module and privacy notice remain the common implementation points.
