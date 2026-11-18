@@ -1,7 +1,7 @@
 # DiggerMan SEO Phase 4 — Accessibility & Measurement Readiness
 
 Date: 2026-11-18
-Status: IMPLEMENTED ON ISOLATED BRANCH — STATIC QA PASS — PRODUCTION DEPLOYMENT PENDING
+Status: MERGED — STATIC QA PASS — PRODUCTION LIVE VERIFIED
 
 ## Objective
 
@@ -63,11 +63,21 @@ Result: 6/6 checks passed on each page (24/24 page-level checks).
 ## Deployment and next gates
 
 - Branch: `seo/phase-4-accessibility-motion-2026-11-18`
-- Production deployment is pending pull request review and merge.
-- After deployment, verify all four routes return HTTP 200 and the new skip-link / reduced-motion markers are present in production HTML.
+- PR #11 was merged to `main` as commit `7a41e57cf9ffdf1cc1fff00917b4e59055c9d254`.
+- After the GitHub Pages cache refreshed, all four production routes returned successfully (HTTP 200): `/`, `/music/`, `/genres/` and `/promotions/celestial-smartlinks/`.
+- Cache-busted production HTML checks confirmed the skip link, reduced-motion CSS, focusable main landmark ID and main navigation label on all four pages.
+- Sitemap and track pages were not modified; the Phase 3 72-URL sitemap remains unchanged.
 - Then obtain GA4 Measurement ID and configure the agreed consent approach before installing analytics.
 - Re-run PageSpeed/Lighthouse when a permitted measurement route is available; inspect mobile and desktop separately.
 - Validate keyboard navigation and screen-reader behavior on a real browser, and compare field Core Web Vitals when Search Console or CrUX data is available.
+
+## Production verification
+
+- Production site: https://kingpinpkaytee-dot.github.io/diggerman-site/
+- Merge commit: `7a41e57cf9ffdf1cc1fff00917b4e59055c9d254`.
+- Live source checks: 4/4 pages contain the new skip link, reduced-motion fallback and `main-content` target.
+- The first cache-only fetch was stale; a cache-busting request confirmed the updated production HTML. No deployment issue remains for this release.
+- Production rollout status: PASS for the four audited artist discovery/conversion pages.
 
 ## Guardrails
 
