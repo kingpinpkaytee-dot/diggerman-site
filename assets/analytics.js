@@ -38,6 +38,8 @@
     window.dataLayer.push(arguments);
   };
   window.gtag("consent", "default", DENIED_STATE);
+  // Match the supplied Google tag initialization; GTM itself remains consent-gated.
+  window.gtag("js", new Date());
 
   function readChoice() {
     try {
