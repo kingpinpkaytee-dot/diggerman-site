@@ -1,7 +1,7 @@
 # DiggerMan SEO Phase 5 — GA4 Consent & Music Click Measurement
 
 Date: 2026-11-18  
-Status: IMPLEMENTED ON ISOLATED BRANCH — TRACKING DISABLED UNTIL OWNER CONFIGURES MEASUREMENT ID
+Status: MERGED — PRODUCTION LIVE VERIFIED — TRACKING DISABLED UNTIL OWNER CONFIGURES MEASUREMENT ID
 
 ## Objective
 Prepare attribution from official artist-site visits to legitimate streaming destinations without confusing website clicks with DSP streams or activating analytics before the owner configures a Measurement ID and the visitor opts in.
@@ -53,3 +53,15 @@ The custom click event omits the full destination URL and query string. It measu
 - Google Consent Mode: https://developers.google.com/tag-platform/security/guides/consent
 - Consent Mode debugging: https://developers.google.com/tag-platform/security/guides/consent-debugging
 - Google Analytics data safeguards: https://support.google.com/analytics/answer/6004245
+
+
+## Production release verification
+
+- PR #12 was squash-merged to `main` as commit `2a65b3ebece922da3fd845bf3db6bdbb89110cd5`.
+- GitHub Pages deployment workflow run `44211414786` completed successfully.
+- Cache-busted production checks completed successfully for the shared analytics asset, privacy notice, homepage, one track detail page, catalogue, genre hub, CELESTIAL SmartLinks and sitemap.
+- The production sitemap contains 73 URL entries, including `/privacy/`.
+- The production homepage, catalogue, track detail, genre hub and SmartLinks pages reference the shared analytics module.
+- The production module passes `node --check`; the production privacy notice and analytics asset return successfully.
+- The deployed module still has a blank Measurement ID. A Node runtime check confirmed the module exits without needing browser APIs or making Google requests in the disabled state.
+- Production rollout status: PASS for the dormant analytics foundation and privacy notice. GA4 event collection remains OFF until a valid owner-supplied Measurement ID is configured and the owner reviews the final privacy notice and retention setting.
