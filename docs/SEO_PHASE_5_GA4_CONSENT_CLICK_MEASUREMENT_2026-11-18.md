@@ -65,3 +65,16 @@ The custom click event omits the full destination URL and query string. It measu
 - The production module passes `node --check`; the production privacy notice and analytics asset return successfully.
 - The deployed module still has a blank Measurement ID. A Node runtime check confirmed the module exits without needing browser APIs or making Google requests in the disabled state.
 - Production rollout status: PASS for the dormant analytics foundation and privacy notice. GA4 event collection remains OFF until a valid owner-supplied Measurement ID is configured and the owner reviews the final privacy notice and retention setting.
+
+
+## Consent-flow simulation
+
+A local Node VM harness used a temporary test-only Measurement ID and a mocked browser DOM; no real Google tag was requested and no visitor data was sent. All checks passed:
+- Consent panel appears before a choice.
+- No Google tag is appended before opt-in.
+- Allow analytics queues consent defaults, grants analytics storage and prepares one Google tag.
+- A Spotify track click generates `music_outbound_click` with Spotify destination and track context.
+- Decline / revocation updates analytics storage back to denied.
+- Re-allow after revocation grants analytics storage again without injecting a duplicate tag.
+
+Result: 7/7 consent-flow simulation checks passed. The real production configuration remains blank and tracking remains disabled.
