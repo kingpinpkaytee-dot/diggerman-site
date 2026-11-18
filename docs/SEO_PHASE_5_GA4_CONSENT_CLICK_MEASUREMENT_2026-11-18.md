@@ -107,3 +107,8 @@ Result: 7/7 consent-flow simulation checks passed. The real production configura
 - In GA4 Admin > Data display > Custom definitions, register event-scoped custom dimensions for the custom parameters that need reporting, such as `destination_platform`, `destination_kind`, `destination_domain`, `track_name`, `link_text`, `link_position`, `page_type`, `page_path` and `contact_method`.
 - Then use DebugView / Realtime with a consenting test browser to verify `page_view`, `music_outbound_click` and `artist_contact_click`.
 - Google documents that custom parameters must be registered as custom dimensions before they become available in standard reports and Explorations. See https://developers.google.com/analytics/devguides/collection/ga4/event-parameters and https://support.google.com/analytics/answer/14239696.
+
+
+## Follow-up — superseded by Phase 6 GTM migration
+
+On 18 November 2026, PR #14 prepared the next measurement implementation: the direct GA4 gtag.js loader described in this Phase 5 release record is replaced by a consent-gated Google Tag Manager loader using container GTM-KWM2BWTS. The GA4 Measurement ID G-EBV6T29B3P is now intended to be configured inside that GTM container's Google tag. Current site-side behavior and the required GTM workspace setup are documented in docs/SEO_PHASE_6_GTM_CONSENT_GATED_MIGRATION_2026-11-18.md. Treat the direct gtag.js implementation details above as the historical Phase 5 release state, not the post-Phase-6 runtime architecture.
