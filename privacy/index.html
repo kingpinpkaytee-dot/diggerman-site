@@ -2,7 +2,7 @@
 <html lang="en-ZA"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Privacy &amp; Analytics Notice | DiggerMan Official</title>
-<meta name="description" content="Learn how optional website analytics and external music-link measurement are intended to work on the official DiggerMan website.">
+<meta name="description" content="Learn how optional website analytics and external music-link measurement work on the official DiggerMan website.">
 <meta name="robots" content="index,follow">
 <link rel="canonical" href="https://kingpinpkaytee-dot.github.io/diggerman-site/privacy/">
 <meta property="og:type" content="website"><meta property="og:title" content="Privacy &amp; Analytics Notice | DiggerMan Official">
@@ -21,16 +21,24 @@ a{color:#59420b}footer{text-align:center;background:var(--ink);color:#ddd;paddin
 <header><a href="https://kingpinpkaytee-dot.github.io/diggerman-site/">DIGGERMAN OFFICIAL</a></header>
 <main id="main-content" tabindex="-1">
 <h1>Privacy &amp; Analytics Notice</h1>
-<div class="panel"><strong>Current status — 18 November 2026:</strong> Google Analytics 4 is configured for this website, but the Google tag is loaded only after a visitor selects <strong>Allow analytics</strong>. If a visitor declines or later withdraws consent, this site stops sending its custom analytics events. Advertising measurement and personalisation remain disabled.</div>
-<h2>What the optional analytics is intended to measure</h2>
-<p>When enabled, Google Analytics 4 is intended to help The Kingpin Entertainment understand which pages visitors use and which external music destinations they choose. Event categories include page views, clicks to music services such as Spotify, Apple Music, YouTube Music, Deezer, TIDAL, SoundCloud and Feature.fm, and clicks on the artist's email contact link.</p>
+<div class="panel"><strong>Current status — 18 November 2026:</strong> Google Tag Manager container <strong>GTM-KWM2BWTS</strong> is configured on this website and is loaded only after a visitor selects <strong>Allow analytics</strong>. The intended Google Analytics 4 property is <strong>G-EBV6T29B3P</strong>; the container must have a published Google tag connected to that measurement ID for GA4 reporting to receive data. Advertising storage, advertising user data and advertising personalisation remain denied.</div>
+
+<h2>What optional analytics measures</h2>
+<p>When enabled, Google Analytics is intended to help The Kingpin Entertainment understand which pages visitors use and which external music destinations they choose. Event categories include page views, clicks to music services such as Spotify, Apple Music, YouTube Music, Deezer, TIDAL, SoundCloud and Feature.fm, and clicks on the artist's email contact link.</p>
 <p>These events measure activity on this website only. They do not confirm that a visitor streamed, saved, followed or played a release inside a music service. Actual streams and listeners must be checked in the relevant artist dashboards.</p>
+
 <h2>Choice and control</h2>
-<p>Analytics remains off until a visitor selects <strong>Allow analytics</strong>. Selecting <strong>Decline analytics</strong> leaves analytics off. The choice is stored in the visitor's browser so it can be remembered on later visits. The <strong>Privacy settings</strong> control can be used to change the choice later. When consent is withdrawn, custom click-event collection stops and analytics consent is updated to denied.</p>
-<p>No Google Ads tag or advertising-personalisation measurement is included in this implementation. Music and site navigation remain available when analytics is declined.</p>
+<p>Analytics remains off until a visitor selects <strong>Allow analytics</strong>. Selecting <strong>Decline analytics</strong> leaves Google Tag Manager unloaded. The choice is stored in the visitor's browser so it can be remembered on later visits. The <strong>Privacy settings</strong> control can be used to change the choice later.</p>
+<p>When consent is withdrawn, the site updates analytics consent to denied, attempts to expire Google Analytics cookies, and stops queuing the site's custom click events. Advertising storage, advertising user data and advertising personalisation remain denied. Music and site navigation remain available when analytics is declined.</p>
+
 <h2>Information sent if analytics is enabled</h2>
-<p>The planned events contain page path/type, music destination platform/type, destination domain, a visible link label, and the track or release heading where available. Email addresses, full search URLs and query strings are not included in the custom click-event payload. Google Analytics may also process standard technical and interaction information as described in Google's documentation and privacy information.</p>
-<p>Google Analytics is a service provided by Google. See <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google's Privacy Policy</a> and <a href="https://support.google.com/analytics/answer/6004245" target="_blank" rel="noopener">Google Analytics data safeguards</a>.</p>
+<p>The site's custom music-link event can include the destination platform/type/domain, page path/type, visible link label, link position and track or release heading where available. The contact event records that the artist's email link was clicked, without including the email address. Full destination URLs and query strings are not included in these custom events.</p>
+<p>Google Analytics may also process standard technical and interaction information as described in Google's documentation and privacy information. The website's custom event data is passed to the Google Tag Manager data layer; the published tags in the container determine which configured services receive it.</p>
+
+<h2>Google services and configuration</h2>
+<p>Google Tag Manager is used to load and manage measurement tags after consent. The site does not load a separate direct Google Analytics tag. GA4 reporting depends on the container's published Google tag and event tags being configured for the intended property and event names. The container should not contain advertising or unrelated third-party tags unless the privacy notice and consent design are reviewed first.</p>
+<p>Google is the provider of Google Tag Manager and Google Analytics. See <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google's Privacy Policy</a>, <a href="https://support.google.com/analytics/answer/6004245" target="_blank" rel="noopener">Google Analytics data safeguards</a> and <a href="https://developers.google.com/tag-platform/security/guides/consent" target="_blank" rel="noopener">Google's consent mode documentation</a>.</p>
+
 <h2>Contact</h2><p>For privacy-related questions about this website, contact <a href="mailto:kingpinpkaytee@gmail.com">The Kingpin Entertainment</a>.</p>
 <p><a href="https://kingpinpkaytee-dot.github.io/diggerman-site/">Return to DiggerMan Official</a> · <a href="https://kingpinpkaytee-dot.github.io/diggerman-site/music/">Music Catalogue</a> · <a href="https://kingpinpkaytee-dot.github.io/diggerman-site/genres/">Genre Guide</a></p>
 </main><footer>© 2026 DiggerMan · The Kingpin Entertainment Pty Ltd</footer>
